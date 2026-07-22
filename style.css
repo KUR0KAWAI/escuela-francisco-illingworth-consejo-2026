@@ -309,7 +309,7 @@ body::before {
     font-size: 0.78rem;
 }
 
-.acta-section {
+.acta-container {
     padding: 30px;
     background-color: var(--white);
     border-radius: var(--border-radius);
@@ -317,18 +317,189 @@ body::before {
     margin-top: 40px;
 }
 
-.acta-section h2 {
-    color: var(--primary-blue);
+.acta-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(30,58,138,0.12);
+    margin-bottom: 24px;
+}
+
+.badge-oficial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background: rgba(14,165,233,0.12);
+    color: #0C4A6E;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+}
+
+.acta-header h2 {
+    color: var(--primary-blue);
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0;
+}
+
+.meta-info,
+.acta-numero,
+.marco-legal,
+.expedicion {
+    color: rgba(31,41,55,0.72);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: rgba(30,58,138,0.12);
+    margin: 0 auto;
+}
+
+.acta-header h1 {
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
+    margin: 0;
+}
+
+.acta-seccion {
+    margin-bottom: 30px;
+}
+
+.acta-seccion h3 {
+    color: var(--primary-blue);
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.acta-texto {
+    color: var(--text-dark);
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+
+.timeline-proceso {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.timeline-proceso li {
+    background: rgba(59,130,246,0.06);
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.resultados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.card-voto {
+    padding: 20px;
+    background: rgba(247,250,255,0.9);
+    border: 1px solid rgba(59,130,246,0.15);
+    border-radius: 16px;
+}
+
+.card-voto.ganadora {
+    background: linear-gradient(180deg, rgba(59,130,246,0.14), rgba(59,130,246,0.05));
+    border-color: rgba(59,130,246,0.28);
+}
+
+.tag-ganador {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+}
+
+.card-voto h4 {
+    margin: 0 0 8px;
+    color: var(--primary-blue);
+    font-size: 1rem;
+}
+
+.votos-num {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.porcentaje {
+    color: rgba(31,41,55,0.7);
+    margin: 6px 0 0;
+}
+
+.tabla-directiva {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.tabla-directiva th,
+.tabla-directiva td {
+    padding: 14px 12px;
+    border: 1px solid rgba(15,23,42,0.08);
+}
+
+.tabla-directiva th {
+    background: rgba(59,130,246,0.08);
+    color: var(--primary-blue);
+    text-align: left;
+    font-weight: 700;
+}
+
+.tabla-directiva tbody tr:nth-child(odd) {
+    background: rgba(59,130,246,0.04);
+}
+
+.acta-footer {
+    padding-top: 18px;
+    border-top: 1px solid rgba(30,58,138,0.12);
+}
+
+.nota-certificacion {
+    margin-top: 14px;
+    padding: 16px;
+    background: rgba(34,197,94,0.08);
+    border-radius: 14px;
+    color: #164E2A;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .resultados-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla-directiva th,
+    .tabla-directiva td {
+        padding: 12px 10px;
+    }
 }
 
 .legal {
-    text-align: center;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 25px;
+    display: none;
 }
 
 .results-grid {
